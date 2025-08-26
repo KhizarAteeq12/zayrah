@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khizar Store - All Products</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #FFD700;
+    }
+    header {
+      background: url('https://lh6.googleusercontent.com/WnzTuvg2axcyWuK5Tf4WLdkluva5US5Pwv-aY61LrI1DF_swWMMfcGCj6BljK6n93RK95RNfJPgdKewyc78g38E') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 10px black;
+    }
+    .products {
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      background: #111;
+      padding: 15px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product:hover {
+      transform: scale(1.05);
+    }
+    .product img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .product h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2rem;
+    }
+    .product p {
+      margin: 0 0 10px;
+      font-weight: bold;
+    }
+    .product a {
+        background: #FFD700;
+        color: #000;
+        padding: 8px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+    .product a:hover {
+        background: #fff;
+    }
+    .parallax {
+      background: url('https://images.unsplash.com/photo-1533575779540-0511e5f0bdf4?auto=format&fit=crop&w=1950&q=80') no-repeat fixed center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 10px #000;
+      margin: 40px 0;
+    }
+    footer {
+      background: #111;
+      color: #888;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+     Khizar Online Store - SHOP MORE & MORE - SHOP DELIGHTS DIGIGTALIZE
+  </header>
+
+  <section class="products">
+    <!-- Links updated to point to product.html with a unique ID -->
+    <div class="product">
+      <img src="https://i.postimg.cc/DyhWPfCV/IMG-20250806-WA0001.jpg" alt="Men Kurta">
+      <h3>Men Kurta</h3>
+      <p>PKR 2200</p>
+      <a href="product.html?id=men-kurta-1">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/vHXm7rg9/IMG-20250806-WA0002.jpg" alt="Women Dress">
+      <h3>Women Dress</h3>
+      <p>PKR 3499</p>
+      <a href="product.html?id=women-dress-2">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/8kRccQTZ/IMG-20250806-WA0003.jpg" alt="Kids Fashion">
+      <h3>Kids Fashion</h3>
+      <p>PKR 1800</p>
+      <a href="product.html?id=kids-fashion-3">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/xCKfXMVX/IMG-20250806-WA0004.jpg" alt="Summer Tee">
+      <h3>Summer Tee</h3>
+      <p>PKR 899</p>
+      <a href="product.html?id=summer-tee-4">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/vBR88XkR/IMG-20250806-WA0005.jpg" alt="Formal Shirt">
+      <h3>Formal Shirt</h3>
+      <p>PKR 1999</p>
+      <a href="product.html?id=formal-shirt-5">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/9XYXVdBS/IMG-20250806-WA0006.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-6">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/XYpnwT0S/IMG-20250806-WA0007.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-7">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/T1tXbc73/IMG-20250806-WA0008.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-8">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/W1Bc0zng/IMG-20250806-WA0009.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-9">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/JnmwdFSh/IMG-20250806-WA0010.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-10">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/pXSwtr34/IMG-20250806-WA0011.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-11">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/Bb6VrfpJ/IMG-20250806-WA0012.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-12">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/dQxHhXnT/IMG-20250806-WA0013.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-13">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/wTRWLVb4/IMG-20250806-WA0014.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-14">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/BnxMwv3x/IMG-20250806-WA0015.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-15">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/zf7p8PVv/IMG-20250806-WA0016.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-16">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/SsKds7Mr/IMG-20250806-WA0017.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-17">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/8z8ZH62p/IMG-20250809-WA0001.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-18">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/cH5m8g7N/IMG-20250809-WA0002.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-19">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/BbLC5SNP/IMG-20250810-WA0001.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-20">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/NF3kp3PJ/IMG-20250810-WA0002.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-21">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/7P5vtSW0/IMG-20250810-WA0003.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-22">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/66gkkTkS/IMG-20250810-WA0004.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-23">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/FsSMNNmK/IMG-20250810-WA0005.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-24">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/x1yBN5XD/IMG-20250810-WA0006.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-25">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/zB3QM108/IMG-20250810-WA0007.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-26">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/vBjKwSN9/IMG-20250810-WA0008.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-27">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/NG9VkBKx/IMG-20250810-WA0009.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-28">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/D0XMvd9N/IMG-20250810-WA0010.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-29">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/05T4tFm1/IMG-20250810-WA0024.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-30">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/3J2cz1C4/IMG-20250810-WA0030.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-31">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/pdLchHNz/IMG-20250810-WA0033.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-32">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/ydJfjy8N/IMG-20250810-WA0035.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-33">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/8zD0Gvty/IMG-20250812-WA0018.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-34">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/rwJYwpHq/IMG-20250812-WA0019.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-35">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/wB4fDGHP/IMG-20250812-WA0020.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-36">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/TwZt45KJ/IMG-20250812-WA0021.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-37">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/0jDVR5mR/IMG-20250812-WA0022.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-38">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/2jZcBGtc/IMG-20250812-WA0023.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-39">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/fTQH7Xnw/IMG-20250812-WA0024.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-40">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/MK099Tq1/IMG-20250812-WA0025.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-41">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/SxyD3hx3/IMG-20250812-WA0029.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-42">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/fRBBhr3L/IMG-20250812-WA0030.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-43">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/rpsgyNW9/IMG-20250812-WA0037.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-44">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/1zdB8Vr1/IMG-20250812-WA0038.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-45">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/vTFvzRKP/IMG-20250812-WA0039.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-46">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/7h3nts8q/IMG-20250812-WA0040.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-47">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/8PGHfSMc/IMG-20250812-WA0041.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-48">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/3JZZgcFB/IMG-20250812-WA0042.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-49">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/T3YJQJkX/IMG-20250812-WA0045.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-50">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/XYHcPBhB/IMG-20250812-WA0047.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-51">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/QMFkZxG4/IMG-20250812-WA0048.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-52">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/D0TqGrWH/Replace-with-your-own-image.webp" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-53">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/wvJX3fBD/Replace-with-your-own-image.jpg" alt="Product">
+      <h3>Unstitched Suit</h3>
+      <p>PKR 2500</p>
+      <a href="product.html?id=product-54">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/VLzqLFPb/SAHI-TOY-BA-MINT.jpg" alt="Sahi Toyoba - Mint">
+      <h3>Sahi Toyoba - Mint</h3>
+      <p>PKR 2800</p>
+      <a href="product.html?id=product-55">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/Znx6xWpR/SAHI-TOY-BA-MINT.webp" alt="Sahi Toyoba - Mint">
+      <h3>Sahi Toyoba - Mint</h3>
+      <p>PKR 2800</p>
+      <a href="product.html?id=product-56">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/BZT50Vk0/SAHI-TOYO-BA-EHITE.jpg" alt="Sahi Toyoba - White">
+      <h3>Sahi Toyoba - White</h3>
+      <p>PKR 2800</p>
+      <a href="product.html?id=product-57">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/QxSpBWjY/SAHI-TOYO-BA-EHITE.webp" alt="Sahi Toyoba - White">
+      <h3>Sahi Toyoba - White</h3>
+      <p>PKR 2800</p>
+      <a href="product.html?id=product-58">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/9QMyyFMm/SAHI-TOYO-BA-GOLDENwebp.jpg" alt="Sahi Toyoba - Golden">
+      <h3>Sahi Toyoba - Golden</h3>
+      <p>PKR 2800</p>
+      <a href="product.html?id=product-59">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/qv5ywVh8/SAHI-TOYO-BA-GOLDENwebp.webp" alt="Sahi Toyoba - Golden">
+      <h3>Sahi Toyoba - Golden</h3>
+      <p>PKR 2800</p>
+      <a href="product.html?id=product-60">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/sxshx3qR/SAHI-TOYO-BA-OFF-WHITE.webp" alt="Sahi Toyoba - Off White">
+      <h3>Sahi Toyoba - Off White</h3>
+      <p>PKR 2800</p>
+      <a href="product.html?id=product-61">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/W3RrRG7z/SAHI-TOYO-BA-SKY-BLUE.webp" alt="Sahi Toyoba - Sky Blue">
+      <h3>Sahi Toyoba - Sky Blue</h3>
+      <p>PKR 2800</p>
+      <a href="product.html?id=product-62">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/5tQvk7LD/SAHI-TOYO-BA-SKY-BLUE.jpg" alt="Sahi Toyoba - Sky Blue">
+      <h3>Sahi Toyoba - Sky Blue</h3>
+      <p>PKR 2800</p>
+      <a href="product.html?id=product-63">Order Now</a>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/tJkVVLGn/SAHI-TOYO-BA-ZINK-BLUE.webp" alt="Sahi Toyoba - Zink Blue">
+      <h3>Sahi Toyoba - Zink Blue</h3>
+      <p>PKR 2800</p>
+      <a href="product.html?id=product-64">Order Now</a>
+    </div>
+  </section>
+
+  <div class="parallax">
+    ZAYRAH! Where Fashion Meets Passion....
+  </div>
+
+  <footer>
+    &copy; 2025 ZAYRAH. All rights reserved.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Khizar Online Store</title>
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* BASIC RESET & GLOBAL STYLES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #222; /* Dark text */
+            background-color: #fff; /* White background */
+            overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+            scroll-behavior: smooth; /* Smooth scrolling for internal anchors (if any) */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: #222; /* Darker headings */
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3.2em; font-weight: 700;} /* Consistent heading sizes */
+        h2 { font-size: 2.4em; font-weight: 600;}
+        h3 { font-size: 1.8em; font-weight: 600;}
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #b8860b; /* Dark Goldenrod link color */
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #daa520; /* Goldenrod on hover */
+        }
+
+        button, .btn {
+            display: inline-block;
+            background-color: #ffc107; /* Yellow button */
+            color: #222; /* Dark text on button */
+            padding: 15px 35px; /* Consistent button size */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em; /* Consistent button text size */
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            text-transform: uppercase; /* Uppercase text */
+             letter-spacing: 0.5px;
+        }
+
+        button:hover, .btn:hover {
+            background-color: #b8860b; /* Dark Goldenrod hover */
+            color: #fff; /* White text on hover */
+            transform: translateY(-5px); /* More pronounced lift */
+             box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background: #fff; /* White header */
+            padding: 15px 0; /* More padding */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Ensure header stays on top */
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2em; /* Larger logo */
+            font-weight: 700;
+            color: #222; /* Dark logo */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px; /* More space */
+        }
+
+        nav ul li a {
+            color: #333; /* Dark navigation links */
+            font-weight: 500;
+            padding: 8px 0; /* More padding */
+            position: relative;
+            transition: color 0.3s ease;
+             text-transform: uppercase; /* Uppercase */
+             font-size: 0.95em;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 3px; /* Thicker underline */
+            background-color: #ffc107; /* Yellow underline on hover */
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+         nav ul li a:hover {
+           color: #b8860b; /* Dark Goldenrod on hover */
+           text-decoration: none; /* Remove default underline on hover */
+        }
+
+        /* PAGE HEADER (For pages other than home) */
+        #page-header {
+            background: url('https://source.unsplash.com/random/1920x400/?ecommerce,abstract,golden') no-repeat center center/cover; /* Consistent banner style */
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        #page-header::before {
+             content: '';
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background: rgba(0, 0, 0, 0.6);
+             z-index: -1;
+        }
+         #page-header h1 {
+             color: #ffc107;
+             font-size: 3em;
+             animation: fadeInScale 1.5s ease-out;
+         }
+
+
+        /* MAIN CONTENT SECTIONS */
+        main {
+             background-color: #fff; /* White background for content */
+        }
+        main section { /* Styling for sections *within* main */
+            padding: 80px 0;
+            opacity: 0; /* Initial state for animation */
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            border-bottom: 1px solid #eee; /* Subtle separator */
+        }
+
+         main section.is-visible {
+             opacity: 1;
+             transform: translateY(0);
+         }
+
+        main section:nth-child(odd) { /* Alternate background for variety */
+             background-color: #fff8dc; /* Light golden background */
+        }
+
+
+        main h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+            color: #b8860b; /* Dark Goldenrod highlight heading */
+        }
+
+        main h2::after { /* Underline effect for heading */
+             content: '';
+             position: absolute;
+             left: 50%;
+             bottom: 0;
+             transform: translateX(-50%);
+             width: 80px; /* Wider underline */
+             height: 4px; /* Thicker underline */
+             background-color: #ffc107; /* Yellow underline */
+             border-radius: 3px;
+        }
+
+        main p {
+            max-width: 900px; /* Limit paragraph width for readability */
+            margin: 0 auto 20px auto; /* Center paragraphs */
+            color: #333;
+            font-size: 1.1em;
+             text-align: center; /* Center the text */
+        }
+
+        /* Specific Styles for sections */
+        #our-story .content-block,
+        #mission-values .content-block,
+        #why-choose-us .content-block,
+        #community-commitment .content-block {
+             max-width: 900px;
+             margin: 0 auto;
+             text-align: center; /* Center text and blocks */
+        }
+         #our-story .content-block img,
+         #mission-values .content-block img,
+         #why-choose-us .content-block img,
+         #community-commitment .content-block img {
+             display: block;
+             max-width: 100%;
+             height: auto;
+             margin: 30px auto;
+             border-radius: 8px;
+             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+             border: 3px solid #ffc107;
+         }
+         #mission-values .grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+             gap: 30px;
+             margin-top: 40px;
+         }
+          #mission-values .grid-item {
+              background-color: #fff;
+              padding: 30px;
+              border-radius: 8px;
+              border: 1px solid #daa520;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+              text-align: left; /* Align text left in grid items */
+               opacity: 0; /* Initial state for animation */
+               transform: translateY(30px);
+          }
+           #mission-values .grid-item h3 {
+               color: #b8860b;
+               margin-bottom: 10px;
+           }
+            #mission-values .grid-item p {
+                text-align: left; /* Ensure paragraphs inside are left aligned */
+                margin: 0;
+                max-width: none; /* Remove max-width constraint for grid items */
+            }
+
+         #why-choose-us .icon-list {
+             display: flex;
+             justify-content: center;
+             flex-wrap: wrap;
+             gap: 40px;
+             margin-top: 40px;
+         }
+          #why-choose-us .icon-item {
+              text-align: center;
+              flex: 0 0 180px; /* Fixed width items */
+              opacity: 0; /* Initial state for animation */
+              transform: translateY(30px);
+          }
+           #why-choose-us .icon-item i {
+               font-size: 3.5em;
+               color: #ffc107;
+               margin-bottom: 15px;
+           }
+            #why-choose-us .icon-item h3 {
+                font-size: 1.2em;
+                margin-bottom: 0;
+                 color: #333;
+            }
+
+
+        /* FOOTER */
+        footer {
+            background: #222; /* Dark background */
+            color: #fff; /* White text */
+            text-align: center;
+            padding: 25px 0; /* More padding */
+            margin-top: 0; /* No margin needed */
+             border-top: 1px solid #555; /* Subtle dark border */
+        }
+
+        footer p {
+            margin: 0;
+             color: #fff; /* Ensure text is white */
+             font-size: 0.9em;
+        }
+
+        footer a {
+            color: #ffc107; /* Yellow link color */
+             font-weight: 400;
+             margin: 0 10px; /* Space out footer links */
+        }
+         footer a:hover {
+             color: #fff; /* White hover on dark footer */
+             text-decoration: underline;
+         }
+
+
+        /* FLOATING WHATSAPP BUTTON */
+        .floating-whatsapp-btn {
+            position: fixed;
+            bottom: 25px; /* More space from bottom */
+            right: 25px; /* More space from right */
+            background-color: #25d366; /* WhatsApp green (kept as requested) */
+            color: white;
+            border-radius: 50%;
+            width: 65px; /* Slightly larger */
+            height: 65px; /* Slightly larger */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.2em; /* Larger icon */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+            z-index: 1000;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .floating-whatsapp-btn:hover {
+            background-color: #1da851; /* Darker green (kept) */
+            transform: scale(1.15) rotate(5deg); /* Slight scale and rotate on hover */
+        }
+
+
+        /* ANIMATIONS */
+         @keyframes fadeInUp {
+              from { opacity: 0; transform: translateY(50px); }
+              to { opacity: 1; transform: translateY(0); }
+          }
+
+          /* Apply the scroll animation */
+          main section,
+          #mission-values .grid-item,
+          #why-choose-us .icon-item {
+               opacity: 0; /* Ensure initial state is hidden */
+               transform: translateY(50px); /* Initial state for slide up */
+          }
+          .is-visible {
+              animation: fadeInUp 0.8s ease-out forwards; /* Apply fade up animation */
+          }
+
+          /* Staggered animation delays for grid/flex items */
+          #mission-values .grid-item { transition-delay: var(--delay); }
+          #why-choose-us .icon-item { transition-delay: var(--delay); }
+
+
+         /* RESPONSIVENESS */
+        @media (max-width: 992px) { /* Adjust for medium screens too */
+             h2 { font-size: 2em; }
+             h3 { font-size: 1.6em; }
+             main section { padding: 60px 0; }
+             #page-header h1 { font-size: 2.5em; }
+             #mission-values .grid, .features-grid { gap: 25px; }
+             #why-choose-us .icon-list { gap: 30px; }
+        }
+
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; } /* H1 is not used in main, but keep consistency */
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.4em; }
+
+            header .container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 10px;
+                justify-content: center;
+                flex-wrap: wrap; /* Allow nav items to wrap */
+            }
+
+            nav ul li {
+                margin: 0 8px 8px 8px; /* Adjust spacing */
+            }
+             nav ul li a {
+                 font-size: 0.9em; /* Smaller nav links */
+                 padding: 5px 0;
+             }
+
+            #page-header { padding: 60px 20px; }
+             #page-header h1 { font-size: 2em; }
+
+            main section { padding: 50px 0; }
+
+            #mission-values .grid, .features-grid {
+                grid-template-columns: 1fr; /* Stack items on small screens */
+                gap: 20px; /* Reduce gap */
+            }
+             #mission-values .grid-item {
+                 text-align: center; /* Center text on mobile */
+             }
+              #mission-values .grid-item p {
+                  text-align: center; /* Center paragraph text */
+              }
+
+             #why-choose-us .icon-list {
+                 flex-direction: column; /* Stack icons on mobile */
+                 gap: 20px;
+             }
+              #why-choose-us .icon-item {
+                  flex: none;
+                  width: 100%;
+              }
+               #why-choose-us .icon-item i {
+                   font-size: 3em;
+               }
+               #why-choose-us .icon-item h3 {
+                    font-size: 1.1em;
+               }
+
+
+            .floating-whatsapp-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 2em;
+                bottom: 15px;
+                right: 15px;
+            }
+
+             footer a { margin: 0 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="container">
+            <div class="logo">Khizar Online Store</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li> <!-- Link to separate Home page -->
+                    <li><a href="store.html">Store</a></li> <!-- Link to separate Store page -->
+                    <li><a href="about.html">About Us</a></li> <!-- Link to this file -->
+                     <!-- Links to other potential separate pages -->
+                    <li><a href="payment.html">Payment Options</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section id="page-header">
+        <div class="container">
+            <h1>About Us</h1>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT AREA -->
+    <main>
+        <!-- OUR STORY SECTION -->
+        <section id="our-story">
+            <div class="container">
+                <h2>Our Story</h2>
+                 <div class="content-block">
+                    <p>Welcome to Khizar Online Store! We are a dedicated eCommerce platform proudly based in Pakistan, committed to redefining your online shopping experience.</p>
+                    <p>Our journey began with a simple yet powerful vision: to create a reliable and accessible online store that connects Pakistani customers with high-quality products they love. We saw a need for a platform that prioritizes trust, affordability, and convenience, and that's exactly what we set out to build.</p>
+
+                    <img src="data:image/jpeg;base64,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" alt="Our Story Image" class="about-image">
+
+                    <p>From our humble beginnings, we have grown by focusing on our customers. Every decision, from product selection to delivery partners, is made with your satisfaction in mind. We continuously strive to improve and expand our offerings to meet your evolving needs.</p>
+                 </div>
+            </div>
+        </section>
+
+        <!-- MISSION AND VALUES SECTION -->
+        <section id="mission-values">
+             <div class="container">
+                 <h2>Our Mission & Values</h2>
+                 <p>Our mission is to empower our customers by providing a seamless shopping experience, offering genuine products, and building lasting relationships based on trust and transparency.</p>
+                 <div class="grid">
+                     <div class="grid-item" style="--delay: 0.1s;">
+                         <h3>Our Mission</h3>
+                         <p>To be the most trusted online shopping destination in Pakistan, known for quality products, exceptional service, and customer-centric approach.</p>
+                     </div>
+                      <div class="grid-item" style="--delay: 0.2s;">
+                         <h3>Quality First</h3>
+                         <p>We are committed to sourcing and offering only products that meet rigorous quality standards.</p>
+                     </div>
+                     <div class="grid-item" style="--delay: 0.3s;">
+                         <h3>Customer Focus</h3>
+                         <p>Putting our customers at the center of every decision and striving to exceed their expectations.</p>
+                     </div>
+                     <div class="grid-item" style="--delay: 0.4s;">
+                         <h3>Integrity</h3>
+                         <p>Operating with honesty, transparency, and ethical practices in all our dealings.</p>
+                     </div>
+                      <div class="grid-item" style="--delay: 0.5s;">
+                         <h3>Innovation</h3>
+                         <p>Continuously seeking new ways to enhance the shopping experience and bring value to our customers.</p>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        <!-- WHY CHOOSE US SECTION (Expanded from home page snippet) -->
+        <section id="why-choose-us">
+            <div class="container">
+                <h2>Why Choose Khizar Online Store?</h2>
+                <p>We believe there are many reasons to make us your preferred online shopping partner.</p>
+                <div class="icon-list">
+                    <div class="icon-item" style="--delay: 0.1s;">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Verified Products</h3>
+                         <p>Handpicked and checked for quality.</p>
+                    </div>
+                     <div class="icon-item" style="--delay: 0.2s;">
+                        <i class="fas fa-truck"></i>
+                        <h3>Fast & Reliable Delivery</h3>
+                         <p>Nationwide shipping to your doorstep.</p>
+                    </div>
+                     <div class="icon-item" style="--delay: 0.3s;">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>Competitive Prices</h3>
+                         <p>Great value for your money.</p>
+                    </div>
+                     <div class="icon-item" style="--delay: 0.4s;">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Secure COD Option</h3>
+                         <p>Pay confidently upon delivery.</p>
+                    </div>
+                     <div class="icon-item" style="--delay: 0.5s;">
+                        <i class="fas fa-headset"></i>
+                        <h3>Friendly Support</h3>
+                         <p>We're here to help you anytime.</p>
+                    </div>
+                </div>
+                 <div class="content-block" style="margin-top: 40px;">
+                     <p>Experience the difference yourself. Start shopping today!</p>
+                     <a href="store.html" class="btn">Explore Our Store</a>
+                 </div>
+            </div>
+        </section>
+
+         <!-- COMMUNITY & COMMITMENT SECTION (Optional) -->
+         <section id="community-commitment">
+             <div class="container">
+                  <h2>Community & Commitment</h2>
+                   <div class="content-block">
+                       <p>As a Pakistani-based business, we are deeply connected to our community. We are committed to contributing positively, supporting local initiatives where possible, and ensuring our operations benefit the people we serve.</p>
+                       <p>We aim to build long-term relationships with our customers, suppliers, and partners, fostering a network built on mutual respect and shared growth.</p>
+                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH3HzinmOmNyko240f6bzJayfLxDh5NKQRBQ&s" alt="Community Image" class="about-image">
+                       <p>Your feedback is invaluable as it helps us continuously improve and serve you better. We are always listening!</p>
+                   </div>
+             </div>
+         </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>© 2023 Khizar Online Store. All rights reserved.</p>
+            <!-- Links to separate files -->
+            <p>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="contact.html">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+     <!-- Replace YOUR_WHATSAPP_NUMBER with your actual number in the script below -->
+     <a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hello%20Khizar%20Online%20Store,%20I%20have%20a%20question%20from%20the%20About%20Us%20page." class="floating-whatsapp-btn" target="_blank">
+         <i class="fab fa-whatsapp"></i>
+     </a>
+
+    <script>
+        // --- IMPORTANT: Replace this placeholder with your actual WhatsApp number ---
+        // Make sure to include the country code without leading zeros or '+' (e.g., 923001234567)
+        const yourWhatsappNumber = '923001234567'; // Replace with your actual number
+        // ----------------------------------------------------------------------
+
+        // Replace YOUR_WHATSAPP_NUMBER in all WhatsApp links using JavaScript
+        document.querySelectorAll('a[href*="YOUR_WHATSAPP_NUMBER"]').forEach(link => {
+            link.href = link.href.replace('YOUR_WHATSAPP_NUMBER', yourWhatsappNumber);
+        });
+
+
+        // Scroll-triggered animations using Intersection Observer
+        // Observe the main section and its immediate child sections
+        const mainSections = document.querySelectorAll('main section');
+        // Also observe the grid/list items within those sections
+        const animatedItems = document.querySelectorAll('#mission-values .grid-item, #why-choose-us .icon-item, #community-commitment .content-block');
+
+
+        const observerOptions = {
+            root: null, // Use the viewport as the root
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: Stop observing once visible if animation should only play once
+                    // observer.unobserve(entry.target);
+                } else {
+                    // Optional: Remove is-visible when not intersecting to allow replay on scroll back down
+                    entry.target.classList.remove('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe the main content sections
+        mainSections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Observe the individual items within grids/lists for staggered animation
+        animatedItems.forEach((item, index) => {
+             // Apply staggered delays using CSS variables
+             // Find the parent element that contains the grid/list
+             const parentGrid = item.parentElement;
+             const itemsInGrid = Array.from(parentGrid.children);
+             const itemIndex = itemsInGrid.indexOf(item); // Get the index within its parent grid
+
+             item.style.setProperty('--delay', `${itemIndex * 0.1 + 0.1}s`); // Stagger by 0.1s
+
+            observer.observe(item);
+        });
+
+        // Observe the page header separately (it might not be in <main>)
+        const pageHeader = document.getElementById('page-header');
+        if (pageHeader) {
+             const headerObserver = new IntersectionObserver((entries) => {
+                  entries.forEach(entry => {
+                       if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            // headerObserver.unobserve(entry.target); // Uncomment if only once
+                       } else {
+                             entry.target.classList.remove('is-visible'); // Optional replay
+                       }
+                  });
+             }, { threshold: 0.1 });
+             headerObserver.observe(pageHeader);
+             // Ensure it's visible immediately if it's in the initial viewport
+             pageHeader.classList.add('is-visible');
+        }
+
+
+    </script>
+
+</body>
+</html>

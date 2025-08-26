@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options - Khizar Online Store</title>
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* BASIC RESET & GLOBAL STYLES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #222; /* Dark text */
+            background-color: #fff; /* White background */
+            overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+            scroll-behavior: smooth; /* Smooth scrolling for internal anchors (if any) */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: #222; /* Darker headings */
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3.2em; font-weight: 700;} /* Consistent heading sizes */
+        h2 { font-size: 2.4em; font-weight: 600;}
+        h3 { font-size: 1.8em; font-weight: 600;}
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #b8860b; /* Dark Goldenrod link color */
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #daa520; /* Goldenrod on hover */
+        }
+
+        button, .btn {
+            display: inline-block;
+            background-color: #ffc107; /* Yellow button */
+            color: #222; /* Dark text on button */
+            padding: 15px 35px; /* Consistent button size */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em; /* Consistent button text size */
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            text-transform: uppercase; /* Uppercase text */
+             letter-spacing: 0.5px;
+        }
+
+        button:hover, .btn:hover {
+            background-color: #b8860b; /* Dark Goldenrod hover */
+            color: #fff; /* White text on hover */
+            transform: translateY(-5px); /* More pronounced lift */
+             box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background: #fff; /* White header */
+            padding: 15px 0; /* More padding */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Ensure header stays on top */
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2em; /* Larger logo */
+            font-weight: 700;
+            color: #222; /* Dark logo */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px; /* More space */
+        }
+
+        nav ul li a {
+            color: #333; /* Dark navigation links */
+            font-weight: 500;
+            padding: 8px 0; /* More padding */
+            position: relative;
+            transition: color 0.3s ease;
+             text-transform: uppercase; /* Uppercase */
+             font-size: 0.95em;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 3px; /* Thicker underline */
+            background-color: #ffc107; /* Yellow underline on hover */
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+         nav ul li a:hover {
+           color: #b8860b; /* Dark Goldenrod on hover */
+           text-decoration: none; /* Remove default underline on hover */
+        }
+
+        /* PAGE HEADER (For pages other than home) */
+        #page-header {
+            background: url('https://source.unsplash.com/random/1920x400/?payment,wallet,money') no-repeat center center/cover; /* Consistent banner style */
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        #page-header::before {
+             content: '';
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background: rgba(0, 0, 0, 0.6);
+             z-index: -1;
+        }
+         #page-header h1 {
+             color: #ffc107;
+             font-size: 3em;
+             animation: fadeInScale 1.5s ease-out;
+         }
+
+
+        /* MAIN CONTENT AREA */
+        main { /* Using <main> for the primary content */
+             background-color: #fff; /* White background for content */
+        }
+        main section { /* Styling for sections *within* main */
+            padding: 80px 0;
+            opacity: 0; /* Initial state for animation */
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            border-bottom: 1px solid #eee; /* Subtle separator */
+        }
+
+         main section.is-visible { /* Class added by JS when in view */
+             opacity: 1;
+             transform: translateY(0);
+         }
+
+        main section:nth-child(odd) { /* Alternate background for variety */
+             background-color: #fff8dc; /* Light golden background */
+        }
+
+
+        main h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+            color: #b8860b; /* Dark Goldenrod highlight heading */
+        }
+
+        main h2::after { /* Underline effect for heading */
+             content: '';
+             position: absolute;
+             left: 50%;
+             bottom: 0;
+             transform: translateX(-50%);
+             width: 80px; /* Wider underline */
+             height: 4px; /* Thicker underline */
+             background-color: #ffc107; /* Yellow underline */
+             border-radius: 3px;
+        }
+
+         /* Specific styles for payment sections */
+         #cod .cod-info,
+         #jazzcash .jazzcash-info {
+             max-width: 800px;
+             margin: 0 auto 40px auto;
+             text-align: center;
+             padding: 30px;
+             border-radius: 8px;
+             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+         }
+         #cod .cod-info {
+             background-color: #fff; /* White background */
+             border: 1px solid #daa520; /* Golden border */
+         }
+         #jazzcash .jazzcash-info {
+             background-color: #fff; /* White background */
+              border: 1px solid #daa520; /* Golden border */
+         }
+
+         #cod h3, #jazzcash h3 {
+             color: #333; /* Dark grey subheadings */
+         }
+         #jazzcash .payment-number {
+             background-color: #fff8dc; /* Light golden background for number */
+             padding: 15px;
+             border-radius: 5px;
+             margin: 20px auto;
+             max-width: 400px;
+              border: 1px dashed #b8860b; /* Dark golden dashed border */
+         }
+          #jazzcash .payment-number strong {
+              font-size: 1.5em;
+              color: #222; /* Dark text for number */
+          }
+
+         #jazzcash .steps-list {
+             max-width: 600px;
+             margin: 40px auto 0 auto;
+             text-align: left; /* Align steps left */
+             padding-left: 20px; /* Indent list */
+         }
+          #jazzcash .steps-list li {
+              margin-bottom: 15px;
+              color: #333;
+          }
+           #jazzcash .steps-list li strong {
+               color: #b8860b; /* Highlight step names */
+           }
+
+          /* Optional image for JazzCash */
+          .jazzcash-image {
+             display: block;
+             max-width: 300px;
+             height: auto;
+             margin: 30px auto;
+             border-radius: 8px;
+             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+              border: 3px solid #ffc107;
+          }
+           /* Optional image for COD */
+           .cod-image {
+              display: block;
+              max-width: 300px;
+              height: auto;
+              margin: 30px auto;
+              border-radius: 8px;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+               border: 3px solid #ffc107;
+           }
+
+
+        /* FOOTER */
+        footer {
+            background: #222; /* Dark background */
+            color: #fff; /* White text */
+            text-align: center;
+            padding: 25px 0; /* More padding */
+            margin-top: 0; /* No margin needed */
+             border-top: 1px solid #555; /* Subtle dark border */
+        }
+
+        footer p {
+            margin: 0;
+             color: #fff; /* Ensure text is white */
+             font-size: 0.9em;
+        }
+
+        footer a {
+            color: #ffc107; /* Yellow link color */
+             font-weight: 400;
+             margin: 0 10px; /* Space out footer links */
+        }
+         footer a:hover {
+             color: #fff; /* White hover on dark footer */
+             text-decoration: underline;
+         }
+
+
+        /* FLOATING WHATSAPP BUTTON */
+        .floating-whatsapp-btn {
+            position: fixed;
+            bottom: 25px; /* More space from bottom */
+            right: 25px; /* More space from right */
+            background-color: #25d366; /* WhatsApp green (kept as requested) */
+            color: white;
+            border-radius: 50%;
+            width: 65px; /* Slightly larger */
+            height: 65px; /* Slightly larger */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.2em; /* Larger icon */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+            z-index: 1000;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .floating-whatsapp-btn:hover {
+            background-color: #1da851; /* Darker green (kept) */
+            transform: scale(1.15) rotate(5deg); /* Slight scale and rotate on hover */
+        }
+
+
+        /* ANIMATIONS */
+         @keyframes fadeInUp {
+              from { opacity: 0; transform: translateY(50px); }
+              to { opacity: 1; transform: translateY(0); }
+          }
+
+          /* Apply the scroll animation */
+          main section,
+          #page-header {
+               opacity: 0; /* Ensure initial state is hidden */
+               transform: translateY(50px); /* Initial state for slide up */
+          }
+          .is-visible {
+              animation: fadeInUp 0.8s ease-out forwards; /* Apply fade up animation */
+          }
+
+
+         /* RESPONSIVENESS */
+        @media (max-width: 992px) { /* Adjust for medium screens too */
+             h2 { font-size: 2em; }
+             h3 { font-size: 1.6em; }
+             main section { padding: 60px 0; }
+             #page-header h1 { font-size: 2.5em; }
+        }
+
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; } /* H1 is in page-header now */
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.4em; }
+
+            header .container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 10px;
+                justify-content: center;
+                flex-wrap: wrap; /* Allow nav items to wrap */
+            }
+
+            nav ul li {
+                margin: 0 8px 8px 8px; /* Adjust spacing */
+            }
+             nav ul li a {
+                 font-size: 0.9em; /* Smaller nav links */
+                 padding: 5px 0;
+             }
+
+            #page-header { padding: 60px 20px; }
+             #page-header h1 { font-size: 2em; }
+
+            main section { padding: 50px 0; }
+
+            #cod .cod-info,
+            #jazzcash .jazzcash-info {
+                 padding: 20px; /* Reduce padding */
+            }
+             #jazzcash .payment-number {
+                 max-width: 100%; /* Allow full width */
+             }
+
+
+            .floating-whatsapp-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 2em;
+                bottom: 15px;
+                right: 15px;
+            }
+
+             footer a { margin: 0 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="container">
+            <div class="logo">Khizar Online Store</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li> <!-- Link to separate Home page -->
+                    <li><a href="store.html">Store</a></li> <!-- Link to separate Store page -->
+                    <li><a href="about.html">About Us</a></li> <!-- Link to separate About Us page -->
+                     <!-- Links to other potential separate pages -->
+                    <li><a href="payment.html">Payment Options</a></li> <!-- Link to this file -->
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section id="page-header">
+        <div class="container">
+            <h1>Payment Options</h1>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT AREA -->
+    <main>
+        <!-- CASH ON DELIVERY SECTION -->
+        <section id="cod">
+            <div class="container">
+                <h2>Cash on Delivery (COD)</h2>
+                <div class="cod-info">
+                    <h3>Pay When You Receive Your Order</h3>
+                    <p>We understand the importance of trust and convenience in online shopping. That's why we offer Cash on Delivery (COD) service all over Pakistan.</p>
+                    <p>With COD, you don't need to make any advance payments. Simply place your order online, and pay the full amount in cash when your package is delivered right to your doorstep.</p>
+                     <img src="data:image/png;base64,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" alt="Cash on Delivery Image" class="cod-image">
+
+                    <h3>How COD Works:</h3>
+                    <ol>
+                        <li>Browse our store and add desired products to your cart.</li>
+                        <li>Proceed to checkout and select "Cash on Delivery" as your payment method.</li>
+                        <li>Provide your shipping details.</li>
+                        <li>Confirm your order.</li>
+                        <li>We will process and dispatch your order.</li>
+                        <li>Our delivery partner will bring the package to your address.</li>
+                        <li>You inspect the package (ensure it's sealed) and pay the exact order amount to the delivery person.</li>
+                    </ol>
+
+                    <h3>Is COD Available in My City?</h3>
+                    <p>Yes, our Cash on Delivery service is available across all major cities, towns, and deliverable areas throughout Pakistan. If you can receive courier service, you can use COD!</p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- JAZZCASH PAYMENT SECTION -->
+        <section id="jazzcash">
+             <div class="container">
+                 <h2>JazzCash Payment</h2>
+                  <div class="jazzcash-info">
+                     <h3>Prefer Digital Payment? Use JazzCash!</h3>
+                     <p>For customers who prefer online payments, we offer the convenience of paying via JazzCash. It's a secure and instant way to finalize your order payment.</p>
+                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAA8FBMVEX/////xgruIycAAAD/wgDsAADGxsbPz8+kpKQdHR3/wACqqqr/6btPT0+tra2EhIRaWlrz8/O0tLT5+fn/46H/5q5UVFQnJyfuFRrf39//ygjY2NhGRkZlZWXt7e28vLyUlJQXFxeMjIw/Pz/5xMX//PZzc3MuLi7/8tX/0QT6zs83NzcPDw/96er72dr3rK3wR0n/+Oj/7sb2m5zyZWf/3Ij1kZLvPD/xXF7tCynxTCP4kR/6oxTwPiX8rhH/zUP/13L/zlHzc3X/yS3/02TzhITvMTTwUFP+tgDvKwDyWSDzaSD2gRv1dx35mBb3wbcS8mOPAAALZklEQVR4nO2ceX+iOhfHpYqi1gWxCiJKtS5T97a2vffOnXbs+txlnvf/bm4gAcKe2CrMfPL7pzVAkm9OcnISlkyGiYmJiYmJiYmJiYmJiYnp4JpuH7dT6qsWi8sLqOVCOkCt9tJoW8rlcqVcc0R4weLievfKe3Syu75MHmnULHGmcrntJoZHWiyub2Sj7vKJV0by+nopHqfWIZrmOEsAZxqOIy0ub1+DMFxA69UyQQOdOjAAh2uGDZ7l6i2axOJ5vb08KgCmUROHATgPp5uA05bXawIShHN3vTw6hykvDOhrj1fekxbAKoQoEOd+tUgFDMB5arqNc3EjU6CYOPLuIh0wYOQ8YyNn8fJKiWLi3F0f3zhBMEBPZ9YJqzWtWSzj3BydJgSGy23Nw4vdfijQOMemCYPhct/BlHMh8/uiAPFvR6YJhQEjZ/TyERRg0l1qYDju/X+/7Y9yst4dffKMgunk/tqThj+5SWKmiYLhOqW9aGR+l5pJE6d5/52ehn9LBgXoLAqG63yjpZHll4Qis1gYrvP1Tzqz3K0SXALEwHCdP6hY7pMzCwEM9+Vv8o7G75JdOsfCcB3ijsa/JIpCBPNOynKdMAsBDPflH6KOxt8mzUICw30h6WgpYCGC6XyNN03i48UQCQzXifVo/LEj5ECRwcT5ADnZ+cUSEQzH/RtpGvk1if0Lv8hgOt+iO1kKBr8hQstEmiaBvYtgEcJ0vkYY5nWVNAUSKcx7uEOTd0lDWCLtZp0/wmDk11R4MkOnJUKYb2FhgJyG6RKKFIbLhfUzOSWjP0MB8+WfYBY+NSOGAiZsAc2nxzDkMFzpr8BOtk6aABM5TPD6mU9HIANFARM4aPjkb5g7IocJHDRpGv5UMKXfA2ASu7UcJHIYjguCSZEvo4L54ndn8vqnhfnbb5iXNI1/Kph//TBJ7iz7RQPj982pmmU+DJMqZ0YDE3BDgE/NUsYUg/kFYILGzC8F89M6gKBJ8+d1zf5w5uedNDv+QJO//Vlhcn6Y1GzMQlGsZ4J2zlK0z5ShWjb/8LOkzDdTwPiD5jTcYcZF0c2Cdmfku6QBMEU/1eRieQ9YNadr3Tx6JIb5EbijmZabZoZGD8QwIXvNctIIjjbELKWQuwApCs8+vG9+It8nzWCLopeF3jlLi2mmxIZ5D332VL5JmgLpO7Fhou42p2MdQGwYrhTxHIB8k4rQ+YmUJfrhGTkNMQ3x7B/z7Iy8Tt4HTD/JMMaWc7KvNIL5ktgtc53oh5qSD57JozKwLIt7di7hZ7RGW1IUsJKJf4ZefktwlUbF8oPg6Vk+ud0AGpZOiegpbT6x2eaRnCVo7y+YJpmIk3wRY7AQv9nAvyVgm02OhiX00Sy/5LujT55NipvllG9qyUe+Ybt5pjALEMULJ2ZXu7s4Gs7o7ImOJWThH2mc43zeYHRFPuub6gRtYsYa5+QI3wPYnG45Wha6F85snPXqsDib5iMlCsf9+HPPl05l/v6A1tk0n2n8sanS9v8feOVcfns5jJ8eNb9TW4UrNUeZi7v9X9WW5btDRNLT77Qgxqc0To1Ll/cfePH8ELfVrqg7mPEdDfThicVuf5oD3L29opnwLZat8zGd1cl+A0fmD/C6A7Vdctx318daFjd74MjyIV7dGFEaBqD4PkG1WlPigMF/mNe1acL9XO7hMehrWovbNwovLfPrA7nlzJQ0sszlnp63VyFfnlpe35PhyLx8f8CvNW2aD/HjBpzx3Az8TJONs9rJcR85knn+7uXAocz0DIQy4UDGocfmVRSJqcXFddSXtCDJ5eH3NTZTEGWW/EDmN+cetqfTWBJT0uJyZX6tzd3lZDPp/vpyeawdmtFmc7Z94EoGEhT49+kZWCTug3MuSQsA9PJ2gn9D7/XmdrVcHP3LgKPRZnp11jR0djUdAe2VjQS0WF6aWorgxydXk4mJiYmJiYmJiYmJiemXl1io6oPBQOj3jlioXmm1WpXxJz8wldcqs/Z5NjsvTrpaee/M1a5ZOeLza1lDrU9tv3y3mMV0PhH2XPIXzOu7xOdDmPonwojjrE9DZa+sIEyF+PxPh1Erfhag/j55JQ2jtgJZ9qNJGEapO12rrmn1Stv+XaDPLVkYyR4vY6Gg9MSeWq0NrST6MpKF6aN6dxtOhnkEqNE7gQ/DiIqq7IsmTWC9664u1TPKmJVxlvBCeqqq2PMSBiMpqhpbLTeM1K+Bft7SxgLIsCEYUsFAELxSMqo3SQdZNNBoUT0VHGcHeFJjrLUqrfoYXCLlzWvRUWUwrrcqda2W98AUULWqFDAFzRqvxW4/UzkvFotzcH2/XXQLuKbquTcNWOMcXpz3FqIUsCBAtQuZd6uZQda4tmEcEHV7eE20Hg4znqH0tqZ68w6DacxdvhROGAbMedajfqbsTQIwPfhPLTJ8qc6wa4o13fxrwPRck+25asNo+IGur6WCYfpZt85pYVAviyouI/jyQjCS7knrWTBu1SP8iAOTDyolBCYfCANbsBLVE/qTwEIAjIr+ndvdIxgmOyCAEa2TZ5V6C4sUAUwDjZl2GxU07mWqRSsta6dVrH9C1dPsQlqtrjOhAhjUOhVdGA8Npq6AwcxadXv+bYU3lg0zQJfVDLeqCC2rgQCMUoaqDmB+XZCdKlhp0GxdYH3Y6nrEkBFgnsVaAcTRvYaFBmAkVBHjLKUFmIxA24LRjJ4rNYY2eTSMmIEnDq0zlfHchrE1MNPaeJiFKjEx0iCqHh7vW8GOlacdYDes2EE30ws6HBgIpouaJw/bTYiFgSNm7lRdqfhgqmZt5wO8tnBAz02CWBhUOac2Yt1jmVlD9J9ve5R6TAEIBuWF9/eq7c2srKGZK/iYyENHC107PB7hmauwk/mr27An3OJYz/c8R+2zocMbhBZgwcCKlLEj4swNg+aBNu55FdjrJzB8gT/CYzARjkvcHfUqFoxi+7mhVkP2gTAzT2PEw8Ae5Fp0uGEkwdtH7LlhjtoA/QqN9VFz4K0h1iwYyzSwxSqCA+MEmg1CmImv1TNdF4w1GPEz0NTUcp+CmzcIBodFxmo4VUWajz8AY1rm3GWZIQ7TQ1EIfoLiTYM/i2H9DMHghWCWAccHOI6+P4zbDGbWEywJOQh3qyLHqngyy/o2rnQYR4uwH9bwQoYYDFBh3LbnazIY0fEXqPm1AG8m4N4MxW2uUKJqt6AlBVXDs7XUAGavKc4V2CHHm9lSa8jgAgGMpNSyY8mdmS6h7u/09x60FYRBtWzhbYKCqTpebWSa7ABrFBFOT1mw+PTNM1YhJoyk5mH+CtwUGcfCSKputPhANXDEArJp3+rv7SrCVKxQw4CRoAN17X6JsB5DVySGeg2oQF8VYcv1LUBjjYAytWZGxYkAjBBqZjkg6Di1WJgCaouuXi4LNRSytBXLr4L5va8oSqFs734ZMOhYXaiiKK0vWUaooxitXM4bzdC3g8dKDRwRdDv8ModK1fq/r4JCGvZWTiPTKxs/6sbWtJSvE1omHxSDGwGCaDVqu65pXedY1b/QMWb8hi/NHPZS8HoFSDMO2wuworuQhuWXJ2Ndr1WsxNhu5l0DAbXM7hO4eDBh6r5ETfTvW0IfFkYzRqHjMPBoI6P6L5PiHYDk2wqeoZ7qMcC8bcH4Nyk1setLQw5ZagTZ3vYITj+EQs4hwPxlEtcs1dwXDe25o+/aAyjYewBUMJjvsDXLO7467zKB4OwBeDquniGbZwreiyxh1QDTHGxh4Ef9XaouznxpmlOGe8PZ9pBIGKsqYRGAijVQu+BU1BtoesNyddBtA00073a2MhiC9NnYyKuQN6RY/+BSg9JcVe6PZ2YJLcG/iu7pXbNwo3sr5rXoHMU80J7V0Mq41zcOOlGHElAQExMTExMTExMTExMTExOTV/8BQnY4xRDXoTIAAAAASUVORK5CYII=" alt="JazzCash Payment Image" class="jazzcash-image">
+
+                     <div class="payment-number">
+                         <p>Send your payment to our official JazzCash number:</p>
+                         <strong>03216615464</strong>
+                         <p style="font-size:0.9em; margin-top: 5px;">(Please double-check the number before sending.)</p>
+                     </div>
+
+                     <h3>Steps to Pay via JazzCash:</h3>
+                     <ol class="steps-list">
+                         <li>Open your <strong>JazzCash App</strong> on your mobile or dial <strong>*786#</strong> from your Jazz/Warid number.</li>
+                         <li>Select the <strong>"Send Money"</strong> option.</li>
+                         <li>Choose <strong>"To Mobile Account"</strong>.</li>
+                         <li>Enter our Official JazzCash Number: <strong>03216615464 NAME:ATEEQ UR REHMAN</strong></li>
+                         <li>Enter the exact <strong>Total Order Amount</strong>.</li>
+                         <li>Confirm the transaction details and enter your <strong>MPIN</strong> to complete the payment.</li>
+                         <li><strong>VERY IMPORTANT:</strong> After a successful payment, take a screenshot of the transaction details or note down the Transaction ID (TXID).</li>
+                         <li>Share the screenshot/TXID with us on our official WhatsApp number: <strong>YOUR_WHATSAPP_NUMBER</strong> or via email at <strong>YOUR_EMAIL</strong>. Mention your Order ID if you have one.</li>
+                     </ol>
+                      <p style="margin-top: 30px;">Once we receive and verify your payment confirmation, your order will be processed and prepared for shipment.</p>
+                      <p>If you have any issues with the JazzCash payment process, please contact our customer support.</p>
+                  </div>
+             </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>© 2023 Khizar Online Store. All rights reserved.</p>
+            <!-- Links to separate files -->
+            <p>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="contact.html">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+     <!-- Replace YOUR_WHATSAPP_NUMBER with your actual number in the script below -->
+     <a href="https://wa.me/+923176997174?text=Hello%20Khizar%20Online%20Store,%20I%20have%20a%20question%20about%20payment%20options." class="floating-whatsapp-btn" target="_blank">
+         <i class="fab fa-whatsapp"></i>
+     </a>
+
+    <script>
+        // --- IMPORTANT: Replace these placeholders with your actual details ---
+        const yourWhatsappNumber = '923176997174'; // Your WhatsApp number with country code (no + or 00)
+        const yourJazzcashNumber = '03216615464'; // Your JazzCash number (as displayed)
+        const yourEmail = 'khizarateeq12@gmail.com'; // Your email address
+        // ----------------------------------------------------------------------
+
+        // Replace placeholders in the HTML (using the variables defined above)
+        document.body.innerHTML = document.body.innerHTML
+            .replace(/YOUR_WHATSAPP_NUMBER/g, yourWhatsappNumber)
+            .replace(/YOUR_JAZZCASH_NUMBER/g, yourJazzcashNumber)
+            .replace(/YOUR_EMAIL/g, yourEmail);
+
+
+        // Scroll-triggered animations using Intersection Observer
+        // Observe the main content sections and the page header
+        const animatedElements = document.querySelectorAll('#page-header, main section');
+
+        const observerOptions = {
+            root: null, // Use the viewport as the root
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: Stop observing once visible if animation should only play once
+                    // observer.unobserve(entry.target);
+                } else {
+                    // Optional: Remove is-visible when not intersecting to allow replay on scroll back down
+                    entry.target.classList.remove('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+
+
+        // Smooth scrolling for internal links (less relevant here)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Adjust scroll position for the fixed header height
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>

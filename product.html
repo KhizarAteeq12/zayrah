@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #FFD700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .product-detail-card {
+      background: #111;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+      text-align: center;
+      padding: 20px;
+    }
+    #product-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    #product-name {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 15px 0 5px;
+    }
+    #product-price {
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: #fff;
+      margin: 0 0 20px;
+    }
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn {
+      background: #FFD700;
+      color: #000;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+    .btn.secondary {
+        background: #333;
+        color: #FFD700;
+    }
+  </style>
+</head>
+<body>
+
+  <body>
+
+  <div class="product-detail-card">
+    <img id="product-image" src="" alt="Loading Product Image...">
+    <h1 id="product-name">Loading...</h1>
+    <p id="product-price">...</p>
+    
+    <div class="actions">
+      <button id="addToCartBtn" class="btn">Add to Cart</button>
+      <!-- YEH LINE BADAL GAYI HAI -->
+      <a id="orderNowLink" href="#" class="btn secondary">Order Now</a>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    const productData = products[productId];
+
+    if (productData) {
+      document.getElementById('product-image').src = productData.image;
+      document.getElementById('product-image').alt = productData.name;
+      document.getElementById('product-name').innerText = productData.name;
+      document.getElementById('product-price').innerText = productData.price;
+      document.title = productData.name + " - ZAYRAH";
+
+      // Order Now link ko update karein
+      document.getElementById('orderNowLink').href = `order.html?id=${productId}`;
+
+      const addToCartBtn = document.getElementById('addToCartBtn');
+      addToCartBtn.addEventListener('click', function() {
+        alert(productData.name + " has been added to your cart! (Cart functionality is next)");
+      });
+
+    } else {
+      document.getElementById('product-name').innerText = "Product Not Found!";
+      document.getElementById('product-price').innerText = "Please go back to the store and select a valid product.";
+      document.getElementById('product-image').style.display = 'none';
+    }
+  </script>
+
+</body>
+
+</body>
+</html>
