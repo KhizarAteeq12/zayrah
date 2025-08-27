@@ -30,7 +30,7 @@ const products = {
     image: "https://i.postimg.cc/vBR88XkR/IMG-20250806-WA0005.jpg"
   },
   
-  // Baaki products jinke naam aur price generic thay, unko number de diye hain
+  // Products up to ID 28
   "product-6": {
     name: "Unstitched Suit",
     price: "PKR 2500",
@@ -146,183 +146,186 @@ const products = {
     price: "PKR 2500",
     image: "https://i.postimg.cc/NG9VkBKx/IMG-20250810-WA0009.jpg"
   },
+
+  // ===== CHANGES START FROM HERE =====
+  
   "product-29": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
+    name: "3 pc unstiched",
+    price: "PKR 2800",
     image: "https://i.postimg.cc/D0XMvd9N/IMG-20250810-WA0010.jpg"
   },
   "product-30": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/05T4tFm1/IMG-20250810-WA0024.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 3200",
+    image: "https://i.postimg.cc/bJ3czDTf/IMG-20250826-WA0006.jpg"
   },
   "product-31": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/3J2cz1C4/IMG-20250810-WA0030.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 2999",
+    image: "https://i.postimg.cc/Fzzt1rWd/IMG-20250826-WA0007.jpg"
   },
   "product-32": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/pdLchHNz/IMG-20250810-WA0033.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 3500",
+    image: "https://i.postimg.cc/L6qKpsgG/IMG-20250826-WA0008.jpg"
   },
   "product-33": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/ydJfjy8N/IMG-20250810-WA0035.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 2750",
+    image: "https://i.postimg.cc/Gt5WyWVM/IMG-20250826-WA0009.jpg"
   },
   "product-34": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/8zD0Gvty/IMG-20250812-WA0018.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 3800",
+    image: "https://i.postimg.cc/SQ1F39RW/IMG-20250826-WA0010.jpg"
   },
   "product-35": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/rwJYwpHq/IMG-20250812-WA0019.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 3400",
+    image: "https://i.postimg.cc/HsfGsCQn/IMG-20250826-WA0011.jpg"
   },
   "product-36": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/wB4fDGHP/IMG-20250812-WA0020.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 2900",
+    image: "https://i.postimg.cc/FHcMYnZZ/IMG-20250826-WA0012.jpg"
   },
   "product-37": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/TwZt45KJ/IMG-20250812-WA0021.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 3600",
+    image: "https://i.postimg.cc/cJSVwMkN/IMG-20250826-WA0013.jpg"
   },
   "product-38": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/0jDVR5mR/IMG-20250812-WA0022.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 2550",
+    image: "https://i.postimg.cc/g0H1DX1L/IMG-20250826-WA0014.jpg"
   },
   "product-39": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/2jZcBGtc/IMG-20250812-WA0023.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 3900",
+    image: "https://i.postimg.cc/zBD6PD1t/IMG-20250826-WA0015.jpg"
   },
   "product-40": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/fTQH7Xnw/IMG-20250812-WA0024.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 3100",
+    image: "https://i.postimg.cc/vBPkRRYQ/IMG-20250826-WA0016.jpg"
   },
   "product-41": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/MK099Tq1/IMG-20250812-WA0025.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 2850",
+    image: "https://i.postimg.cc/VvdTm7vX/IMG-20250826-WA0017.jpg"
   },
   "product-42": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/SxyD3hx3/IMG-20250812-WA0029.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 3300",
+    image: "https://i.postimg.cc/dQxp4KN6/IMG-20250826-WA0018.jpg"
   },
   "product-43": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/fRBBhr3L/IMG-20250812-WA0030.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 2600",
+    image: "https://i.postimg.cc/7YJcRQpk/IMG-20250826-WA0019.jpg"
   },
   "product-44": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/rpsgyNW9/IMG-20250812-WA0037.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 3700",
+    image: "https://i.postimg.cc/HkGK19g7/IMG-20250826-WA0020.jpg"
   },
   "product-45": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/1zdB8Vr1/IMG-20250812-WA0038.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 3250",
+    image: "https://i.postimg.cc/P5m7XvXV/IMG-20250826-WA0021.jpg"
   },
   "product-46": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
-    image: "https://i.postimg.cc/vTFvzRKP/IMG-20250812-WA0039.jpg"
+    name: "3 pc unstiched",
+    price: "PKR 2950",
+    image: "https://i.postimg.cc/PqTRPfNX/IMG-20250826-WA0022.jpg"
   },
   "product-47": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
+    name: "3 pc unstiched",
+    price: "PKR 3550",
     image: "https://i.postimg.cc/7h3nts8q/IMG-20250812-WA0040.jpg"
   },
   "product-48": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
+    name: "3 pc unstiched",
+    price: "PKR 2800",
     image: "https://i.postimg.cc/8PGHfSMc/IMG-20250812-WA0041.jpg"
   },
   "product-49": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
+    name: "3 pc unstiched",
+    price: "PKR 3450",
     image: "https://i.postimg.cc/3JZZgcFB/IMG-20250812-WA0042.jpg"
   },
   "product-50": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
+    name: "3 pc unstiched",
+    price: "PKR 2700",
     image: "https://i.postimg.cc/T3YJQJkX/IMG-20250812-WA0045.jpg"
   },
   "product-51": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
+    name: "3 pc unstiched",
+    price: "PKR 3850",
     image: "https://i.postimg.cc/XYHcPBhB/IMG-20250812-WA0047.jpg"
   },
   "product-52": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
+    name: "3 pc unstiched",
+    price: "PKR 3150",
     image: "https://i.postimg.cc/QMFkZxG4/IMG-20250812-WA0048.jpg"
   },
   "product-53": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
+    name: "3 pc unstiched",
+    price: "PKR 2900",
     image: "https://i.postimg.cc/D0TqGrWH/Replace-with-your-own-image.webp"
   },
   "product-54": {
-    name: "Unstitched Suit",
-    price: "PKR 2500",
+    name: "3 pc unstiched",
+    price: "PKR 3650",
     image: "https://i.postimg.cc/wvJX3fBD/Replace-with-your-own-image.jpg"
   },
   "product-55": {
-    name: "Sahi Toyoba - Mint",
+    name: "3 pc unstiched",
     price: "PKR 2800",
     image: "https://i.postimg.cc/VLzqLFPb/SAHI-TOY-BA-MINT.jpg"
   },
   "product-56": {
-    name: "Sahi Toyoba - Mint",
+    name: "3 pc unstiched",
     price: "PKR 2800",
     image: "https://i.postimg.cc/Znx6xWpR/SAHI-TOY-BA-MINT.webp"
   },
   "product-57": {
-    name: "Sahi Toyoba - White",
+    name: "3 pc unstiched",
     price: "PKR 2800",
     image: "https://i.postimg.cc/BZT50Vk0/SAHI-TOYO-BA-EHITE.jpg"
   },
   "product-58": {
-    name: "Sahi Toyoba - White",
+    name: "3 pc unstiched",
     price: "PKR 2800",
     image: "https://i.postimg.cc/QxSpBWjY/SAHI-TOYO-BA-EHITE.webp"
   },
   "product-59": {
-    name: "Sahi Toyoba - Golden",
+    name: "3 pc unstiched",
     price: "PKR 2800",
     image: "https://i.postimg.cc/9QMyyFMm/SAHI-TOYO-BA-GOLDENwebp.jpg"
   },
   "product-60": {
-    name: "Sahi Toyoba - Golden",
+    name: "3 pc unstiched",
     price: "PKR 2800",
     image: "https://i.postimg.cc/qv5ywVh8/SAHI-TOYO-BA-GOLDENwebp.webp"
   },
   "product-61": {
-    name: "Sahi Toyoba - Off White",
+    name: "3 pc unstiched",
     price: "PKR 2800",
     image: "https://i.postimg.cc/sxshx3qR/SAHI-TOYO-BA-OFF-WHITE.webp"
   },
   "product-62": {
-    name: "Sahi Toyoba - Sky Blue",
+    name: "3 pc unstiched",
     price: "PKR 2800",
     image: "https://i.postimg.cc/W3RrRG7z/SAHI-TOYO-BA-SKY-BLUE.webp"
   },
   "product-63": {
-    name: "Sahi Toyoba - Sky Blue",
+    name: "3 pc unstiched",
     price: "PKR 2800",
     image: "https://i.postimg.cc/5tQvk7LD/SAHI-TOYO-BA-SKY-BLUE.jpg"
   },
   "product-64": {
-    name: "Sahi Toyoba - Zink Blue",
+    name: "3 pc unstiched",
     price: "PKR 2800",
     image: "https://i.postimg.cc/tJkVVLGn/SAHI-TOYO-BA-ZINK-BLUE.webp"
   }
